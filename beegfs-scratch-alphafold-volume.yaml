@@ -4,7 +4,7 @@ kind: PersistentVolume
 metadata:
   name: beegfs-scratch-alphafold-pv
   labels:
-    capsule.clastix.io/tenant: abcdesktop
+    capsule.clastix.io/tenant: YOUR_TENANT_NAME
 spec:
   accessModes:
     - ReadOnlyMany
@@ -22,7 +22,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: beegfs-scratch-alphafold-pvc
-  namespace: abcdesktop-external-ns
+  namespace: YOUR_NAMESPACE
 spec:
   accessModes:
     - ReadOnlyMany
