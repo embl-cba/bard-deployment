@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-nfs-abc-e-easybuild
+  namespace: abcdesktop-external-ns
+spec:
+  accessModes:
+    - ReadOnlyMany
+  resources:
+    requests:
+      storage: 200Ti
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs-abc-e-easybuild
+  namespace: abcdesktop-external-ns
+spec:
+  capacity:
+    storage: 200Ti
+  volumeMode: Filesystem
+  accessModes:
+    - ReadOnlyMany
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - nfsvers=3
+  nfs:
+    path: /vol/easybuild
+    server: easybuild.embl.de
+  claimRef:
+    namespace: abcdesktop-external-ns
+    name: pvc-nfs-abc-e-easybuild

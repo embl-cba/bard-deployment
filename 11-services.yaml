@@ -1,0 +1,113 @@
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: desktop
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: desktop
+  namespace: YOUR_NAMESPACE
+  labels:
+    abcdesktop/role: desktop
+spec:
+  clusterIP: None
+  selector:
+    type: x11server
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: memcached
+  namespace: YOUR_NAMESPACE
+  labels:
+    abcdesktop/role: memcached
+spec:
+  selector:
+    run: memcached-od
+  ports:
+    - port: 11211
+      protocol: TCP
+      targetPort: 11211
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mongodb
+  namespace: YOUR_NAMESPACE
+  labels:
+    abcdesktop/role: mongodb
+spec:
+  selector:
+    run: mongodb-od
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: speedtest
+  namespace: YOUR_NAMESPACE
+  labels:
+    abcdesktop/role: speedtest
+spec:
+  selector:
+    run: speedtest-od
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx
+  namespace: YOUR_NAMESPACE
+  labels:
+    abcdesktop/role: nginx
+spec:
+  selector:
+    run: nginx-od
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      name: http
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: pyos
+  namespace: YOUR_NAMESPACE
+  labels:
+    abcdesktop/role: pyos
+spec:
+  selector:
+    run: pyos-od
+  ports:
+    - port: 8000
+      protocol: TCP
+      targetPort: 8000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: openldap
+  namespace: YOUR_NAMESPACE
+  labels:
+    abcdesktop/role: openldap
+spec:
+  selector:
+    run: openldap-od
+  ports:
+    - name: ldap
+      protocol: TCP
+      port: 389
+      targetPort: 10389
+    - name: ldaps
+      protocol: TCP
+      port: 636
+      targetPort: 10636

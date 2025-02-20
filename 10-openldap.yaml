@@ -1,0 +1,50 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: YOUR_NAMESPACE
+  name: openldap-od
+  labels:
+    abcdesktop/role: openldap
+spec:
+  selector:
+    matchLabels:
+      run: openldap-od
+  replicas: 1
+  template:
+    metadata:
+      namespace: YOUR_NAMESPACE
+      labels:
+        run: openldap-od
+        netpol/dns: "true"
+    spec:
+      containers:
+        - name: openldap
+          image: abcdesktopio/oc.openldap:3.0
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 1000m
+              memory: 128Mi
+          ports:
+            - containerPort: 10389
+            - containerPort: 10636
+      # modify according to your own cluster
+      tolerations:
+        - key: "denbi"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - ops-k1n16g.embl.de #replace with your own value
+                      - ops-k1n17g.embl.de #replace with your own value

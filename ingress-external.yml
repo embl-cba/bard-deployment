@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: abcdesktop-ingress
+  namespace: YOUR_NAMESPACE
+  annotations:
+    # Use appropriate annotations for your Ingress controller, e.g., for NGINX:
+    traefik.ingress.kubernetes.io/your_own_ingress_controller: XXX # replace with you own ingress controller 
+spec:
+  ingressClassName: external-users
+  rules:
+    - host: bard-external.embl.de
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx
+                port:
+                  number: 80

@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: YOUR_NAMESPACE
+  name: memcached-od
+  labels:
+    abcdesktop/role: memcached
+spec:
+  selector:
+    matchLabels:
+      run: memcached-od
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: memcached-od
+        type: database
+    spec:
+      containers:
+        - name: memcached
+          image: memcached
+          ports:
+            - containerPort: 11211
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1024Mi
+            requests:
+              cpu: 500m
+              memory: 128Mi
+      # change according to your own cluster, you may or may not need tolerations and affinity
+      tolerations:
+        - key: "denbi" #replace with your own
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - node1.embl.de # replace with your own node
+                      - node1.embl.de # replace with your own node 

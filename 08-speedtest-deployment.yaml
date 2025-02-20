@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: YOUR_NAMESPACE
+  name: speedtest-od
+  labels:
+    abcdesktop/role: speedtest
+spec:
+  selector:
+    matchLabels:
+      run: speedtest-od
+  replicas: 1
+  template:
+    metadata:
+      namespace: YOUR_NAMESPACE
+      labels:
+        run: speedtest-od
+    spec:
+      containers:
+        - name: speedtest
+          imagePullPolicy: Always
+          image: abcdesktopio/oc.speedtest:3.0
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 500m
+              memory: 128Mi

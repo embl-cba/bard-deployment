@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podapp
+  namespace: abcdesktop
+spec:
+  volumes:
+  - name: x11socket
+    hostPath:
+      # x11 directory location on host ${PODUID}
+      path: /var/lib/kubelet/pods/${PODUID}/volumes/kubernetes.io~empty-dir/x11socket
+      # this field is optional
+      type: Directory
+  - name: home
+    hostPath:
+      # home directory location on host
+      path: ${PODHOME}
+      # this field is optional
+      type: Directory
+  containers:
+  - name: abccontainer
+    image: ubuntu:20.04
+    command: ["/bin/sleep"]
+    args: ["1d"]
+    volumeMounts:
+    - mountPath: /tmp/.X11-unix
+      name: x11socket
+    - mountPath: /home/yisun
+      name: home
+    env:
+    - name: XAUTH_KEY
+      value: ${XAUTH_KEY}
+

@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cleanup-user-pods
+  namespace: YOUR_NAMESPACE
+spec:
+  schedule: "0 1 * * *" # Runs every day at 1 AM
+  jobTemplate:
+    spec:
+      backoffLimit: 4
+      template:
+        spec:
+          serviceAccountName: pyos-serviceaccount
+          containers:
+            - name: cleanup
+              image: registry.git.embl.de/grp-cbbcs/abcdesktop-apps/cleanup:external
+              imagePullPolicy: Always
+              command: ["/usr/local/bin/cleanup-ext.sh"]
+              resources:
+                limits:
+                  cpu: 1000m
+                  memory: 1024Mi
+                requests:
+                  cpu: 500m
+                  memory: 128Mi
+          restartPolicy: Never
