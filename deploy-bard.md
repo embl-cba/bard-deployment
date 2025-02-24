@@ -116,7 +116,7 @@ Create configmap `bard-config` in the `bard-desktop` namespace
 
 The output should be similar to 
 
-    configmap/abcdesktop-config created
+    configmap/bard-config created
 
 ## Step 5: Create pods and services
 The deployment yaml files contains definitions for all roles, service account, pods and services needed.
