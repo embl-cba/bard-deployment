@@ -1,6 +1,6 @@
 # BARD Desktop # 
 BARD is a virtual desktop platform based on Kubernetes, developed for cloud-based bioimage analysis tasks. 
-It was developed based on the open-source project [abcdesktop](https://abcdesktop.io)
+It was developed based on the open-source project [abcdesktop](https://abcdesktop.io). 
 Everything in BARD, such as applications, system APIs etc are docker containers.
 
 ## Current Deployment ##
