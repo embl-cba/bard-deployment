@@ -33,7 +33,7 @@ EOF
 ```
   
 
-### Step3: Install containerd.io from docker repository
+### Step 3: Install containerd.io from docker repository
 
 Open a terminal, install common packages
  
