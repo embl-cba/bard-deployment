@@ -1,5 +1,6 @@
-# Install k8s cluster #
-This instruction details the steps required to install a local k8s cluster for testing of BARD.
+# Install k8s cluster locally #
+This instruction details the steps required to install a local k8s cluster for testing of BARD. 
+If you have an existing k8s cluster you do not need these steps, please visit [here](deploy-bard) to deploy BARD>
 
 ## Requirements ##
 1. Ubuntu 22.04
