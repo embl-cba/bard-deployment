@@ -1,6 +1,6 @@
 # Set up BARD for Kubernetes cluster
 This instructions will help you deploy a BARD instance to your local cluster. 
-If you have a production k8s cluster that you want use for BARD, please have a detail look at the deployment yaml files, and od.confi file.
+If you have a production k8s cluster that you want use for BARD, please have a detail look at the deployment yaml files, and `od.config` file.
 
 ## Requirements
 1. Working K8s cluster
