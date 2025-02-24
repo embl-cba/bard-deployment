@@ -7,7 +7,7 @@ Everything in BARD, such as applications, system APIs etc are docker containers.
 All applications on BARD are standard containers with some BARD specifics, such as LABEL etc.
 You can find all the application containers [here](https://github.com/embl-cba/bard-containers)
 
-## Current Deployment ##
+## Current Deployments ##
 - EMBL internal BARD: https://bard.embl.de (used by EMBL staff for day-to-day image analysis)
 - EMBL external BARD: https://bard-external.embl.de (used for external courses)
   
