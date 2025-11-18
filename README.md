@@ -19,6 +19,12 @@ You can find all the application containers [here](https://github.com/embl-cba/b
 
 |Course Name|No. of Participants  | Date|
 |--|--|--|
+|GloBIAS Training School, Kobe Japan| 52|25-29 Oct|
+|EMBL Predoc Course||13-16 Oct 2025|
+|EMBL Practical Adv. methods in Bioimage Analysis|26| Sept 2025|
+|Lautenschlaeger Summer School|10|Septemper 2025|
+|EMBL Internal course |13|25 September 2025|
+|STRUCTURAL BIOLOGY 2.0 : integrating X-ray diffraction and modern computational tools”, Montevideo, Uruguay | 25 | 26-28 April 2025 |
 |EMBL Advanced deep learning for image analysis   |  20 | Feb 17-24 2025|
 |EMBO Practical Integrative structural biology: solving molecular puzzles   |  20 | Nov.17-24 2024|
 |EMBL Pre-doc Course|14|Oct 21-25, 2024|
@@ -32,6 +38,7 @@ To contribute to the BARD, please open PR for any questions, bug fixes, feature 
 # Citation #
 
 Tischer, C., Hériché, J.-K., & Sun, Y. (2025). A Virtual Bioimage Analysis Research Desktop (BARD) for Deployment of Bioimage Tools on Kubernetes. Base4NFDI User Conference 2024 (UC4B2024), Berlin. Zenodo. https://doi.org/10.5281/zenodo.14643885
+
 
 
 
