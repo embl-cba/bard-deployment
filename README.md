@@ -39,7 +39,9 @@ To contribute to the BARD, please open PR for any questions, bug fixes, feature 
 
 Tischer, C., Hériché, J.-K., & Sun, Y. (2025). A Virtual Bioimage Analysis Research Desktop (BARD) for Deployment of Bioimage Tools on Kubernetes. Base4NFDI User Conference 2024 (UC4B2024), Berlin. Zenodo. https://doi.org/10.5281/zenodo.14643885
 
+# Acknowledgement #
 
+This project is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under the National Research Data Infrastructure – NFDI 46/1 – 501864659
 
 
 
