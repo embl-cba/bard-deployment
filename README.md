@@ -44,5 +44,8 @@ Tischer, C., Hériché, J.-K., & Sun, Y. (2025). A Virtual Bioimage Analysis Res
 This project is funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under the National Research Data Infrastructure – NFDI 46/1 – 501864659
 
 
+# Testimonials #
+
+> _"what you have done on BARD is really the best platform I saw so far for BioImage analysis on a web browser, it's really cleaner than with other platforms, I am really jealous "_
 
 
